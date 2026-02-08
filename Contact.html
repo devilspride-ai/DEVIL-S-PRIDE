@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact | Devil's Pride</title>
+</head>
+
+<body style="
+background-image:url(1.png);
+margin:0;
+height:100vh;
+background-size:cover;
+background-repeat:no-repeat;
+background-position:center;
+text-align:center;
+color:white;
+">
+
+<h1>Contact Us</h1>
+
+<input type="text" id="name" placeholder="Enter your name"><br><br>
+<input type="email" id="email" placeholder="Enter email"><br><br>
+<input type="tel" id="phone" placeholder="Number"><br><br>
+<textarea id="msg" placeholder="Message"></textarea><br><br>
+
+<button onclick="sendData()">Submit</button>
+
+<script>
+function sendData() {
+
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var msg = document.getElementById("msg").value;
+
+  var whatsappURL =
+    "https://wa.me/916300804471?text="
+    + "Name: " + name + "%0A"
+    + "Email: " + email + "%0A"
+    + "Phone: " + phone + "%0A"
+    + "Message: " + msg;
+
+  // WhatsApp open
+  window.open(whatsappURL, "_blank");
+
+  // 1 second tarvatha Thankyou page
+  setTimeout(function () {
+    window.location.href = "thankyou.html";
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
