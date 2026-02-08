@@ -1,35 +1,84 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Contact | Devil's Pride</title>
 
-  <!-- EmailJS CDN -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-image: url('1.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      width: 360px;
+      max-width: 90%;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 90px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #1877f2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #145dbf;
+    }
+  </style>
 </head>
 
-<body style="background-image:url('1.png');
-  color:white;
-  background-size:cover;
-  background-position:center;
-  margin:0;
-  height:100vh;
-justify-content: center;
-  text-align:center;
-  font-family: Arial, sans-serif;
-  padding-top: 200px;">
+<body>
 
-  <h1 style="font-size:36px;margin-bottom:20px;">Contact Us</h1>
+  <div class="card">
+    <h1>Contact Us</h1>
 
-  <input type="text" id="name" placeholder="Your Name" required><br><br>
-  <input type="email" id="email" placeholder="Your Email" required><br><br>
-  <textarea id="message" placeholder="Your Message" required></textarea><br><br>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" required></textarea>
 
-  <button type="button" onclick="sendEmail()">Submit</button>
+    <button onclick="sendEmail()">Submit</button>
+  </div>
 
   <script>
-    // INIT EmailJS
     (function(){
-      emailjs.init("U34b3xXXcfEAWaMrK");   // 👈 Public Key pettu
+      emailjs.init("U34b3xXXcfEAWaMrK"); // 👈 Public key
     })();
 
     function sendEmail() {
@@ -40,15 +89,14 @@ justify-content: center;
       };
 
       emailjs.send(
-        "service_l80stfl",     // 👈 Service ID
-        "template_02d171o",    // 👈 Template ID
+        "service_l80stfl",   // 👈 Service ID
+        "template_02d171o",  // 👈 Template ID
         params
       ).then(function() {
-          // Email success ayyaka Thank You page
-          window.location.href = "thankyou.html";
+        window.location.href = "thankyou.html";
       }, function(error) {
-          alert("Error occured. Try again.");
-          console.log(error);
+        alert("Error occurred. Try again.");
+        console.log(error);
       });
     }
   </script>
