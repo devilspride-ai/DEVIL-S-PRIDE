@@ -1,87 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Devil's Pride</title>
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <style>
-    body {
+    /* RESET */
+    *{
+      box-sizing: border-box;
       margin: 0;
-      height: 100vh;
-      background-image: url('1.png');
+      padding: 0;
+    }
+
+    /* BODY */
+    body{
+      min-height: 100vh;
+      background-image: url('new.jpg'); /* same bg image */
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+
       font-family: Arial, sans-serif;
     }
 
-    .card {
-      background: white;
-      width: 360px;
-      max-width: 90%;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* HERO CARD */
+    .hero{
+      width: 92%;
+      max-width: 560px;
+      padding: 40px 30px;
       text-align: center;
+      color: white;
+
+      background: rgba(0,0,0,0.25);
+      border-radius: 16px;
+
+      margin: auto;
     }
 
-    h1 {
+    /* TITLE */
+    .hero h1{
+      font-size: 34px;
       margin-bottom: 20px;
     }
 
-    input, textarea {
+    /* INPUTS */
+    .hero input,
+    .hero textarea{
       width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    textarea {
-      resize: none;
-      height: 90px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #1877f2;
-      color: white;
+      padding: 14px;
+      margin-bottom: 14px;
+      font-size: 15px;
+      border-radius: 8px;
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
+      outline: none;
     }
 
-    button:hover {
-      background: #145dbf;
+    .hero textarea{
+      resize: none;
+      height: 100px;
+    }
+
+    /* BUTTON */
+    .hero button{
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: white;
+      color: black;
+    }
+
+    .hero button:hover{
+      background: #e6e6e6;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
+  <div class="hero">
     <h1>Contact Us</h1>
 
     <input type="text" id="name" placeholder="Your Name" required>
     <input type="email" id="email" placeholder="Your Email" required>
     <textarea id="message" placeholder="Your Message" required></textarea>
 
-    <button onclick="sendEmail()">Submit</button>
+    <button type="button" onclick="sendEmail()">Submit</button>
   </div>
 
   <script>
     (function(){
-      emailjs.init("U34b3xXXcfEAWaMrK"); // 👈 Public key
+      emailjs.init("U34b3xXXcfEAWaMrK");  // 👈 Public Key
     })();
 
-    function sendEmail() {
+    function sendEmail(){
       var params = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
@@ -92,10 +114,10 @@
         "service_l80stfl",   // 👈 Service ID
         "template_02d171o",  // 👈 Template ID
         params
-      ).then(function() {
+      ).then(function(){
         window.location.href = "thankyou.html";
-      }, function(error) {
-        alert("Error occurred. Try again.");
+      }, function(error){
+        alert("Error. Please try again.");
         console.log(error);
       });
     }
