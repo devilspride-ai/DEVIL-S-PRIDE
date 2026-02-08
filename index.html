@@ -1,55 +1,128 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Devil's pride | Business Website</title>
-<link href="DEVILS.png" rel="icon" type="image/png">
-  </head>
-  <body style="background-image:url('new.jpg'); 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devil's Pride | Business Website</title>
+<link href:"DEVILS.png"; rel:"icon"; type:"image/png";>
+<style>
+/* ===== BODY ===== */
+body{
   margin:0;
-  height:100vh;
-  background-repeat:no-repeat;
-  background-size:cover;color: white;
-  text-align:center;"
-    font-family: Arial, sans-serif;
-  padding-top: 100px;>
-    
-    <h1>DEVIL'S PRIDE</h1>
-    <p><i><b>we are a future-focused tech brand<br>working on</b></i></p>
-    <ul style="
-    list-style:disc;
-    display:inline-block;
-    text-align:left;
-    line-height:30px;
-    font-size:18px;
-    margin-top:20px;">
-      <li>WEB DEVELOPMENT</li>
-      <li>APP DEVELOPMENT</li>
-      <li>AI-BASED SOLUTIONS</li>
-    </ul>
-      <p style="margin-top:30px; font-size:16px; opacity:0.8;">
-    Built with learning, consistency,<br>
-    and long-term vision.
-  </p>
- <h2>Our Services</h2>
+  min-height:100vh;
+  background-image: url('new.jpg'); /* mee background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-<table border="6" cellpadding="20" align="center">
-  <tr>
-    <th>Service</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>1 Page Website</td>
-    <td>₹3000</td>
-  </tr>
-  <tr>
-    <td>Business Website</td>
-    <td>₹5000</td>
-  </tr>
-</table>
-<br><br>
+/* ===== HERO CARD ===== */
+.hero{
+  width: 90%;
+  max-width: 420px;
+  padding: 30px 25px;
+  background: rgba(0,0,0,0.65);
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  transform: scale(1.2); /* 🔥 size control */
+}
 
-<a href="contact.html">
-  <button>Click here to continue</button>
-</a>
-  </body>
+/* ===== TITLE ===== */
+.hero h1{
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* ===== SUBTITLE ===== */
+.hero p{
+  font-size: 15px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+/* ===== LIST ===== */
+.hero ul{
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+.hero ul li{
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+/* ===== SERVICES ===== */
+.hero h2{
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+/* ===== TABLE ===== */
+.hero table{
+  width:100%;
+  margin-top:10px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.hero th, .hero td{
+  border:1px solid #aaa;
+  padding:8px;
+}
+
+/* ===== BUTTON ===== */
+.hero button{
+  margin-top:18px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.hero button:hover{
+  background:#ddd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>DEVIL'S PRIDE</h1>
+  <p>we are a future-focused tech brand</p>
+
+  <ul>
+    <li>WEB DEVELOPMENT</li>
+    <li>APP DEVELOPMENT</li>
+    <li>AI-BASED SOLUTIONS</li>
+  </ul>
+
+  <h2>Our Services</h2>
+
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>1 Page Website</td>
+      <td>₹3000</td>
+    </tr>
+    <tr>
+      <td>Business Website</td>
+      <td>₹5000</td>
+    </tr>
+  </table>
+
+  <a href="contact.html">
+    <button>Click here to continue</button>
+  </a>
+</div>
+
+</body>
 </html>
