@@ -3,19 +3,49 @@
 <head>
   <title>Thank You | Devil's Pride</title>
 </head>
-<body style="background-image:url('ALL.jpg'); color:orange;
-margin:0;
-height:100vh;
-background-repeat:no-repeat;
-background-size:cover;
-text-align:center; 
-background-position:center;
-margin-top:100px;">
-  <h1><b>Thank You 🙏</b></h1>
-  <p><b>Your details have been submitted successfully.</b></p>
+  <style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: url("ALL.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
 
-  <a href="index.html">
-    <button>Go Back to Home</button>
-  </a>
+  .container {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 40px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  </style>
+<body>
+  <div class="container">
+    <h1>Thank You 🙏</h1>
+    <p>Your details have been submitted successfully.</p>
+
+    <a href="index.html">
+      <button>Go Back to Home</button>
+    </a>
+  </div>
 </body>
 </html>
