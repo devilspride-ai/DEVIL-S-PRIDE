@@ -1,132 +1,147 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devil's Pride | Business Website</title>
-<link href:"DEVILS.png"; rel:"icon"; type:"image/png";>
-<style>
-/* ===== BODY ===== */
-body{
-  margin: 0;
-  min-height: 100vh;
-  background-image: url('new.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: Arial, sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devil's Pride | Business Website</title>
 
-  display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: flex-start;   /*  IMPORTANT */
-  padding-top: 60px;         /*  gap from top */
-}
+  <style>
+    /* RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ===== HERO CARD ===== */
-.hero{
-  width: 92%;
-  max-width: 520px;
-  padding: 40px 30px;
-  background: transparent;
-  border-radius: 16px;
-  text-align: center;
-  color: white;
-  margin:0 auto;
-}
-  
-/* ===== TITLE ===== */
-.hero h1{
-  font-size: 32px;
-  margin-bottom: 8px;
-}
+    /* BODY */
+    body {
+      min-height: 100vh;
+      background-image: url('new.jpg'); /* background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-/* ===== SUBTITLE ===== */
-.hero p{
-  font-size: 15px;
-  margin-bottom: 15px;
-  opacity: 0.9;
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-/* ===== LIST ===== */
-.hero ul{
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-}
-.hero ul li{
-  font-size: 15px;
-  margin: 6px 0;
-}
+      font-family: Arial, sans-serif;
+    }
 
-/* ===== SERVICES ===== */
-.hero h2{
-  margin-top: 18px;
-  font-size: 20px;
-}
+    /* HERO CARD */
+    .hero {
+      width: 92%;
+      max-width: 560px;
 
-/* ===== TABLE ===== */
-.hero table{
-  width:50%;
-  margin-top:10px;
-  border-collapse: collapse;
-  font-size: 12px;
-}
-.hero th, .hero td{
-  border:1px solid #aaa;
-  padding:8px;
-}
+      padding: 40px 30px;
+      text-align: center;
+      color: #fff;
 
-/* ===== BUTTON ===== */
-.hero button{
-  margin-top:15px;
-  padding: 10px 15px;
-  font-size: 16px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-.hero button:hover{
-  background:#ddd;
-}
-</style>
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 16px;
+
+      margin: auto; /* 🔥 HARD CENTER FIX */
+    }
+
+    /* TITLE */
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* SUBTITLE */
+    .hero p {
+      font-size: 16px;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    /* LIST */
+    .hero ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .hero ul li {
+      font-size: 16px;
+      margin: 6px 0;
+    }
+
+    /* SERVICES TITLE */
+    .hero h2 {
+      font-size: 22px;
+      margin: 18px 0 12px;
+    }
+
+    /* TABLE */
+    .hero table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .hero th,
+    .hero td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    .hero th {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* BUTTON */
+    .hero button {
+      padding: 14px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ffffff;
+      color: #000;
+    }
+
+    .hero button:hover {
+      background: #e0e0e0;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <h1>DEVIL'S PRIDE</h1>
-  <p>we are a future-focused tech brand</p>
+  <div class="hero">
+    <h1>DEVIL'S PRIDE</h1>
+    <p>we are a future-focused tech brand</p>
 
-  <ul>
-    <li>WEB DEVELOPMENT</li>
-    <br>
-    <li>APP DEVELOPMENT</li>
-    <br>
-    <li>AI-BASED SOLUTIONS</li>
-  </ul>
+    <ul>
+      <li>WEB DEVELOPMENT</li>
+      <li>APP DEVELOPMENT</li>
+      <li>AI-BASED SOLUTIONS</li>
+    </ul>
 
-  <h2>Our Services</h2>
+    <h2>Our Services</h2>
 
-  <table>
-    <tr>
-      <th>Service</th>
-      <th>Price</th>
-    </tr>
-    <tr>
-      <td>1 Page Website</td>
-      <td>₹3000</td>
-    </tr>
-    <tr>
-      <td>Business Website</td>
-      <td>₹5000</td>
-    </tr>
-  </table>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>1 Page Website</td>
+        <td>₹3000</td>
+      </tr>
+      <tr>
+        <td>Business Website</td>
+        <td>₹5000</td>
+      </tr>
+    </table>
 
-  <a href="contact.html">
-    <button>Click here to continue</button>
-  </a>
-</div>
+    <button onclick="location.href='contact.html'">
+      Click here to continue
+    </button>
+  </div>
 
 </body>
 </html>
