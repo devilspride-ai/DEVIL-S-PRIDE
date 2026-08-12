@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact | Devil's Pride</title>
 
   <!-- EmailJS -->
@@ -10,16 +11,17 @@
 
   <style>
     /* RESET */
-    *{
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     /* BODY */
-    body{
+    body {
       min-height: 100vh;
-      background-image: url('1.png'); /* same bg image */
+
+      background-image: url('1.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -31,96 +33,214 @@
       font-family: Arial, sans-serif;
     }
 
+    /* LOGO */
+    .logo {
+      position: fixed;
+      top: 20px;
+      left: 25px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+
+      z-index: 10;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+
+      object-fit: contain;
+    }
+
     /* HERO CARD */
-    .hero{
+    .hero {
       width: 92%;
       max-width: 560px;
+
       padding: 40px 30px;
+
       text-align: center;
       color: white;
 
-      background: rgba(0,0,0,0.25);
+      background: rgba(0, 0, 0, 0.25);
+
       border-radius: 16px;
 
       margin: auto;
     }
 
     /* TITLE */
-    .hero h1{
+    .hero h1 {
       font-size: 34px;
       margin-bottom: 20px;
     }
 
     /* INPUTS */
     .hero input,
-    .hero textarea{
+    .hero textarea {
       width: 100%;
+
       padding: 14px;
       margin-bottom: 14px;
+
       font-size: 15px;
+
       border-radius: 8px;
       border: none;
       outline: none;
     }
 
-    .hero textarea{
+    /* TEXTAREA */
+    .hero textarea {
       resize: none;
       height: 100px;
     }
 
     /* BUTTON */
-    .hero button{
+    .hero button {
       width: 100%;
+
       padding: 14px;
+
       font-size: 16px;
+
       border-radius: 10px;
       border: none;
+
       cursor: pointer;
+
       background: white;
       color: black;
     }
 
-    .hero button:hover{
+    /* BUTTON HOVER */
+    .hero button:hover {
       background: #e6e6e6;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+      .logo {
+        top: 15px;
+        left: 15px;
+
+        font-size: 17px;
+      }
+
+      .logo img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero {
+        padding: 35px 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <h1>Contact Us</h1>
-
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
-
-    <button type="button" onclick="sendEmail()">Submit</button>
+  <!-- DEVIL'S PRIDE LOGO -->
+  <div class="logo">
+    <img src="dp.jpg" alt="Devil's Pride Logo">
+    <span>DEVIL'S PRIDE</span>
   </div>
 
+
+  <!-- CONTACT FORM -->
+  <div class="hero">
+
+    <h1>Contact Us</h1>
+
+    <input
+      type="text"
+      id="name"
+      placeholder="Your Name"
+      required
+    >
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Your Email"
+      required
+    >
+
+    <textarea
+      id="message"
+      placeholder="Your Message"
+      required
+    ></textarea>
+
+    <button type="button" onclick="sendEmail()">
+      Submit
+    </button>
+
+  </div>
+
+
+  <!-- EMAILJS SCRIPT -->
   <script>
-    (function(){
-      emailjs.init("U34b3xXXcfEAWaMrK");  // 👈 Public Key
+
+    /* INITIALIZE EMAILJS */
+    (function () {
+      emailjs.init("U34b3xXXcfEAWaMrK");
     })();
 
-    function sendEmail(){
+
+    /* SEND EMAIL */
+    function sendEmail() {
+
       var params = {
+
         name: document.getElementById("name").value,
+
         email: document.getElementById("email").value,
+
         message: document.getElementById("message").value
+
       };
 
+
       emailjs.send(
-        "service_l80stfl",   // 👈 Service ID
-        "template_02d171o",  // 👈 Template ID
+
+        "service_l80stfl",
+
+        "template_02d171o",
+
         params
-      ).then(function(){
-        window.location.href = "thankyou.html";
-      }, function(error){
-        alert("Error. Please try again.");
-        console.log(error);
-      });
+
+      ).then(
+
+        function () {
+
+          window.location.href = "thankyou.html";
+
+        },
+
+        function (error) {
+
+          alert("Error. Please try again.");
+
+          console.log(error);
+
+        }
+
+      );
+
     }
+
   </script>
 
 </body>
