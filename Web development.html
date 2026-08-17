@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Web Development | Devil's Pride</title>
+
+  <style>
+
+    /* RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* BODY */
+    body {
+      min-height: 100vh;
+
+      background-image: url('8.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 15px 25px;
+
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+
+      z-index: 1000;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* NAVIGATION */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #cccccc;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      width: 92%;
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 125px 0 70px;
+    }
+
+    /* HERO TITLE */
+    .page-title {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .page-title h1 {
+      font-size: 46px;
+
+      margin-bottom: 15px;
+
+      text-shadow: 0 3px 10px black;
+    }
+
+    .page-title p {
+      max-width: 850px;
+
+      margin: auto;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+      color: #eeeeee;
+
+      text-shadow: 0 2px 6px black;
+    }
+
+    /* CONTENT CARD */
+    .content-card {
+      background: rgba(0, 0, 0, 0.58);
+
+      border: 1px solid rgba(255, 255, 255, 0.22);
+
+      border-radius: 20px;
+
+      padding: 35px;
+
+      margin-bottom: 30px;
+
+      backdrop-filter: blur(7px);
+
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    /* SIDE HEADING */
+    .section-title {
+      font-size: 28px;
+
+      margin-bottom: 25px;
+
+      padding-left: 15px;
+
+      border-left: 4px solid white;
+    }
+
+    /* ITEM */
+    .item {
+      margin-bottom: 22px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item h3 {
+      font-size: 19px;
+
+      margin-bottom: 7px;
+    }
+
+    .item p {
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      color: #eeeeee;
+    }
+
+    /* NUMBER */
+    .number {
+      display: inline-flex;
+
+      width: 32px;
+      height: 32px;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 8px;
+
+      border-radius: 50%;
+
+      background: white;
+      color: black;
+
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* BACK BUTTON */
+    .back-area {
+      text-align: center;
+
+      margin-top: 40px;
+    }
+
+    .back-button {
+      display: inline-block;
+
+      padding: 13px 25px;
+
+      background: white;
+      color: black;
+
+      text-decoration: none;
+
+      border-radius: 10px;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #dddddd;
+
+      transform: translateY(-3px);
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      .navbar {
+        padding: 12px 15px;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .logo img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .container {
+        width: 94%;
+        padding-top: 115px;
+      }
+
+      .page-title h1 {
+        font-size: 34px;
+      }
+
+      .page-title p {
+        font-size: 15px;
+      }
+
+      .content-card {
+        padding: 25px 20px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+
+      .item h3 {
+        font-size: 17px;
+      }
+
+      .item p {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="logo">
+
+      <img
+        src="dp.jpg"
+        alt="Devil's Pride Logo"
+      >
+
+      <span>DEVIL'S PRIDE</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">About</a>
+
+      <a href="Services.html">Services</a>
+
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+
+    <!-- TITLE -->
+    <div class="page-title">
+
+      <h1>Web Development</h1>
+
+      <p>
+        The web development process is a structured, multi-step
+        journey to build a website or app. It moves from initial
+        discovery and planning to design, coding, testing, launch,
+        and ongoing care. Each phase ensures the final product
+        meets user needs and business goals.
+      </p>
+
+    </div>
+
+
+    <!-- PLANNING -->
+    <section class="content-card">
+
+      <h2 class="section-title">
+        Planning and Discovery
+      </h2>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">1</span>
+          Define Goals
+        </h3>
+
+        <p>
+          Clarify the core purpose, target audience,
+          and key results of the website or application.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">2</span>
+          Scope and Sitemap
+        </h3>
+
+        <p>
+          Map out the page structure, user flows,
+          required features, and overall website architecture.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">3</span>
+          Tech Stack
+        </h3>
+
+        <p>
+          Choose the appropriate programming languages,
+          frameworks, technologies, databases, and hosting
+          solutions for the project.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- DESIGN -->
+    <section class="content-card">
+
+      <h2 class="section-title">
+        Design and Wireframing
+      </h2>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">1</span>
+          Wireframes
+        </h3>
+
+        <p>
+          Sketch basic page layouts and structures to
+          establish the placement of content, navigation,
+          and important interface elements.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">2</span>
+          UI/UX Design
+        </h3>
+
+        <p>
+          Add branding, colors, fonts, graphics, and
+          visual elements while creating an intuitive
+          and user-friendly experience.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">3</span>
+          Prototypes
+        </h3>
+
+        <p>
+          Build clickable models of the product to test
+          user paths, interactions, navigation, and
+          overall usability before development.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- DEVELOPMENT -->
+    <section class="content-card">
+
+      <h2 class="section-title">
+        Coding and Development
+      </h2>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">1</span>
+          Front-end
+        </h3>
+
+        <p>
+          Code client-side layouts and interactive
+          interfaces using technologies such as
+          HTML, CSS, and JavaScript.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">2</span>
+          Back-end
+        </h3>
+
+        <p>
+          Build server-side logic, databases, APIs,
+          authentication systems, and other core
+          application functionality.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">3</span>
+          Integration
+        </h3>
+
+        <p>
+          Connect the user interface with server systems,
+          databases, APIs, and external services to create
+          a complete working application.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TESTING AND LAUNCH -->
+    <section class="content-card">
+
+      <h2 class="section-title">
+        Testing and Launch
+      </h2>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">1</span>
+          Quality Assurance
+        </h3>
+
+        <p>
+          Check for bugs, mobile layout issues,
+          broken functionality, compatibility problems,
+          and website performance.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">2</span>
+          Deployment
+        </h3>
+
+        <p>
+          Publish the completed website or application
+          to the production server and make it available
+          to users.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">3</span>
+          Maintenance
+        </h3>
+
+        <p>
+          Monitor uptime, security, performance, updates,
+          and ongoing improvements to keep the product
+          reliable and effective.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- BACK BUTTON -->
+    <div class="back-area">
+
+      <a
+        href="Services.html"
+        class="back-button"
+      >
+        ← Back to Services
+      </a>
+
+    </div>
+
+
+  </main>
+
+</body>
+</html>
