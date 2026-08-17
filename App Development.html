@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>App Development | Devil's Pride</title>
+
+  <style>
+
+    /* RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* BODY */
+    body {
+      min-height: 100vh;
+
+      background-image: url('9.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 15px 25px;
+
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+
+      z-index: 1000;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* NAVIGATION */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #cccccc;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      width: 92%;
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 125px 0 70px;
+    }
+
+    /* PAGE TITLE */
+    .page-title {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .page-title h1 {
+      font-size: 46px;
+
+      margin-bottom: 15px;
+
+      text-shadow: 0 3px 10px black;
+    }
+
+    .page-title p {
+      max-width: 850px;
+
+      margin: auto;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+      color: #eeeeee;
+
+      text-shadow: 0 2px 6px black;
+    }
+
+    /* CONTENT CARD */
+    .content-card {
+      background: rgba(0, 0, 0, 0.58);
+
+      border: 1px solid rgba(255, 255, 255, 0.22);
+
+      border-radius: 20px;
+
+      padding: 35px;
+
+      margin-bottom: 30px;
+
+      backdrop-filter: blur(7px);
+
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 28px;
+
+      margin-bottom: 25px;
+
+      padding-left: 15px;
+
+      border-left: 4px solid white;
+    }
+
+    /* ITEM */
+    .item {
+      margin-bottom: 22px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item h3 {
+      font-size: 19px;
+
+      margin-bottom: 7px;
+    }
+
+    .item p {
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      color: #eeeeee;
+    }
+
+    /* NUMBER */
+    .number {
+      display: inline-flex;
+
+      width: 32px;
+      height: 32px;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 8px;
+
+      border-radius: 50%;
+
+      background: white;
+      color: black;
+
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* BACK BUTTON */
+    .back-area {
+      text-align: center;
+
+      margin-top: 40px;
+    }
+
+    .back-button {
+      display: inline-block;
+
+      padding: 13px 25px;
+
+      background: white;
+      color: black;
+
+      text-decoration: none;
+
+      border-radius: 10px;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #dddddd;
+
+      transform: translateY(-3px);
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      .navbar {
+        padding: 12px 15px;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .logo img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .container {
+        width: 94%;
+        padding-top: 115px;
+      }
+
+      .page-title h1 {
+        font-size: 34px;
+      }
+
+      .page-title p {
+        font-size: 15px;
+      }
+
+      .content-card {
+        padding: 25px 20px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+
+      .item h3 {
+        font-size: 17px;
+      }
+
+      .item p {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="logo">
+
+      <img
+        src="dp.jpg"
+        alt="Devil's Pride Logo"
+      >
+
+      <span>DEVIL'S PRIDE</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">About</a>
+
+      <a href="Services.html">Services</a>
+
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+
+    <!-- TITLE -->
+    <div class="page-title">
+
+      <h1>App Development</h1>
+
+      <p>
+        App development is the process of creating software
+        applications for mobile phones, tablets, and computers.
+        It involves planning the app, designing its interface,
+        writing code, testing its functionality, and launching
+        it for users.
+      </p>
+
+    </div>
+
+
+    <!-- MAIN STEPS -->
+    <section class="content-card">
+
+      <h2 class="section-title">
+        Main Steps to Build an App
+      </h2>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">1</span>
+          Plan
+        </h3>
+
+        <p>
+          Define the app idea, understand the target users,
+          and identify the most important features that
+          should be developed first.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">2</span>
+          Design
+        </h3>
+
+        <p>
+          Create simple sketches and wireframes to plan
+          how the application's screens, navigation,
+          and user interface will look and work.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">3</span>
+          Code
+        </h3>
+
+        <p>
+          Build the front-end that users interact with
+          and the back-end systems that manage servers,
+          databases, APIs, and application data.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">4</span>
+          Test
+        </h3>
+
+        <p>
+          Test the application on real devices and
+          different environments to identify bugs,
+          performance problems, and usability issues.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">5</span>
+          Launch
+        </h3>
+
+        <p>
+          Prepare the completed application for release
+          and publish it through the appropriate app stores
+          or distribution platforms.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHOOSING HOW TO BUILD -->
+    <section class="content-card">
+
+      <h2 class="section-title">
+        Choosing How to Build
+      </h2>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">1</span>
+          Native Apps
+        </h3>
+
+        <p>
+          Build separate applications for each platform.
+          iOS applications can be developed using Swift,
+          while Android applications can be developed
+          using Kotlin. Native development can provide
+          excellent performance and platform-specific
+          experiences.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">2</span>
+          Cross-Platform Apps
+        </h3>
+
+        <p>
+          Write code once and use it across multiple
+          platforms with technologies such as Flutter
+          or React Native. This approach can reduce
+          development time while supporting both
+          Android and iOS.
+        </p>
+
+      </div>
+
+
+      <div class="item">
+
+        <h3>
+          <span class="number">3</span>
+          AI and No-Code
+        </h3>
+
+        <p>
+          Modern AI-powered platforms and no-code tools
+          can help create simple applications quickly
+          without requiring extensive traditional coding.
+          These approaches can be useful for prototypes,
+          simple applications, and rapid experimentation.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- BACK BUTTON -->
+    <div class="back-area">
+
+      <a
+        href="Services.html"
+        class="back-button"
+      >
+        ← Back to Services
+      </a>
+
+    </div>
+
+
+  </main>
+
+</body>
+</html>
